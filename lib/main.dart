@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graphs_flutter/bar_chart/bar_charts.dart';
 
+import 'lottie animation.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,11 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: BarCharts(),
+      home: const LottieAnim(),
     );
   }
 }
