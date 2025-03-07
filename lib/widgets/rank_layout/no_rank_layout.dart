@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../lottie animation.dart';
-import '../models/person_rank_model.dart';
-import '../utils.dart';
+import '../../models/person_rank_model.dart';
+import '../../utils.dart';
+
 
 class NoRankLayout extends StatelessWidget {
    NoRankLayout({

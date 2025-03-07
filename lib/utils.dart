@@ -1,6 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'app_dimensions.dart';
+
+class AppUtils{
+  static Widget verticalSpacer({
+    double height = AppDimensions.defaultMargin,
+  }) =>
+      SizedBox(height: height);
+  static Widget horizontalSpacer({
+    double width = AppDimensions.defaultMargin,
+  }) =>
+      SizedBox(width: width);
+  static bool hasText(String? text) =>
+      text != null && convertToNonNullableBool(text.trim().isNotEmpty);
+
+
+
+  static bool convertToNonNullableBool(bool? value) => value ?? false;
+
+}
+
+
+
+
 Widget getRankWidget(int index,double rankSize) {
   if (index == 0) {
     return svgPicture("assets/ranklists/1st-place-medal.svg",rankSize);

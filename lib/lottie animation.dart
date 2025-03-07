@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graphs_flutter/models/person_rank_model.dart';
-import 'package:graphs_flutter/rank_layout/no_rank_layout.dart';
-import 'package:graphs_flutter/rank_layout/rank_layout.dart';
-import 'package:graphs_flutter/rank_layout/rounded_rank_layout.dart';
-import 'package:graphs_flutter/tab_widget.dart';
+import 'package:graphs_flutter/widgets/rank_layout/no_rank_layout.dart';
+import 'package:graphs_flutter/widgets/rank_layout/rounded_rank_layout.dart';
+import 'package:graphs_flutter/widgets/rank_widget.dart';
+import 'package:graphs_flutter/widgets/tab_widget.dart';
 import 'package:lottie/lottie.dart';
+
+import 'widgets/no_rank_widget.dart';
 
 class LottieAnim extends StatelessWidget {
   const LottieAnim({super.key});
@@ -51,7 +53,8 @@ class LottieAnim extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10,),
-               RankList(size:size),
+           //   const RankedWidget(),
+              NoRankWidget(size:size),
             ],
           ),
         ),
@@ -60,23 +63,6 @@ class LottieAnim extends StatelessWidget {
   }
 }
 
-class RankList extends StatelessWidget {
-  const RankList({
-    super.key, required this.size,
-  });
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-    return getRankLayout(index);
-          },
-          itemCount: rankModelList.length,
-        );
-  }
 
   getRankLayout(int index){
     if(index == 0){
@@ -114,7 +100,7 @@ class RankList extends StatelessWidget {
     }
   }
 
-}
+
 
 
 

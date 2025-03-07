@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../lottie animation.dart';
-import '../models/person_rank_model.dart';
-import '../utils.dart';
+import '../../models/person_rank_model.dart';
+import '../../utils.dart';
 
-class RankItem extends StatelessWidget {
-  const RankItem({
-    super.key,
-    required this.rankModelList,
-    required this.index,
-    required this.titleSize,
-    required this.trailingSize,
-    required this.rankSize,
-    required this.imageSize,
-  });
+class RoundedRankLayout extends StatelessWidget {
+  const RoundedRankLayout({super.key, required this.rankModelList, required this.index, required this.imageSize, required this.titleSize, required this.trailingSize, required this.rankSize});
 
   final PersonRankModel rankModelList;
   final int index;
@@ -25,8 +16,8 @@ class RankItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-    //  elevation: 5,
-      margin: EdgeInsets.symmetric(horizontal: 10,vertical:2),
+      //  elevation: 5,
+      margin: const EdgeInsets.symmetric(horizontal: 10,vertical:2),
       //padding: getRankSize(index),
       //decoration: getBakgroundRank(index),
       shape: RoundedRectangleBorder(
@@ -82,17 +73,4 @@ class RankItem extends StatelessWidget {
     }
   }
 
-// getRankSize(int index) {
-//   if(index==0){
-//     return EdgeInsets.symmetric(vertical: 15,horizontal: 15);
-//   }
-//   else if(index==1){
-//     return EdgeInsets.symmetric(vertical: 15,horizontal: 15);
-//   }
-//   else if(index==2){
-//     return EdgeInsets.symmetric(vertical: 15,horizontal: 15);
-//   }else{
-//     return EdgeInsets.all(0.0);
-//   }
-// }
 }

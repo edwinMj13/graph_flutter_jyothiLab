@@ -11,6 +11,8 @@ class PersonRankModel {
       {required this.name, required this.points, required this.image});
 }
 
+//getRankedList
+
 List<PersonRankModel> rankModelList = [
   PersonRankModel(
     name: "Edwin Baby",
